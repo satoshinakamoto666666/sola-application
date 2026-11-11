@@ -1,0 +1,97 @@
+{
+  "bounty_id": "6506004c-0442-4233-8af1-cf5e26919d71",
+  "bounty_slug": "multihopper-build-and-route-challenge-up-to-dollar50000-revenue-share-1",
+  "sponsor": "MultiHopper",
+  "reward_usdc": 5000.0,
+  "max_pool_usdc": 50000.0,
+  "wallets": {
+    "solana_wallet": "Aw2hhJvjewAcxssyWMzKmFge6jWxEzN6GiFQgyZNKakt",
+    "evm_wallet": "0x971b573b47357c22a67FcE8c56Aaeb478356C942"
+  },
+  "onchain_smart_contracts_verification": {
+    "solana_mainnet_slot": 468257544,
+    "contracts": {
+      "MultiHopperCore": {
+        "program_id": "3jLoS2wbNgtKzieUUxwg6Xhdv6gbZkHDtPWA9ZAgspFh",
+        "solscan_url": "https://solscan.io/account/3jLoS2wbNgtKzieUUxwg6Xhdv6gbZkHDtPWA9ZAgspFh",
+        "executable": true,
+        "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "lamports": 1141440
+      },
+      "Orchestrator": {
+        "program_id": "4TPCmR2uN3hDM1FbTsf7ZtFXwXGSz4u1Kxv5YHj6eruX",
+        "solscan_url": "https://solscan.io/account/4TPCmR2uN3hDM1FbTsf7ZtFXwXGSz4u1Kxv5YHj6eruX",
+        "executable": true,
+        "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "lamports": 1141440
+      },
+      "TransferHookGuard": {
+        "program_id": "2JEv3pD6nczEvn1xDXaEzehkJofPPjoQQpnW5nGY3r52",
+        "solscan_url": "https://solscan.io/account/2JEv3pD6nczEvn1xDXaEzehkJofPPjoQQpnW5nGY3r52",
+        "executable": true,
+        "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "lamports": 1141440
+      }
+    }
+  },
+  "live_api_probe": {
+    "endpoint": "https://multihopper.com/api/v1/hop-library",
+    "http_status": 401,
+    "response_preview": "{\"error\":{\"code\":\"MH_001\",\"message\":\"Invalid or missing API key\",\"requestId\":\"d9a13298-93d7-858d-c368-d9d41675ebd0\"}}"
+  },
+  "multi_send_treasury_request": {
+    "idempotency_key": "dbfa46b7-840b-4192-9f46-dc36de4eb7fe",
+    "endpoint": "https://multihopper.com/api/v1/transfers",
+    "payload": {
+      "sourceWallet": "Aw2hhJvjewAcxssyWMzKmFge6jWxEzN6GiFQgyZNKakt",
+      "tokenMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "destinations": [
+        {
+          "wallet": "BPz2u6eoWLervxEqfpsMCVmKk7h6fEVsd7L5rvEibMfD",
+          "amount": "25000000",
+          "memo": "Swap.io x402 API Liquidity Pool"
+        },
+        {
+          "wallet": "2wKupLR9q6wXYppw8Gr2NvWxKBUqm4PPJKkQfoxHDBg4",
+          "amount": "15000000",
+          "memo": "Agent Keeper Reserve"
+        }
+      ],
+      "routeConfig": {
+        "mode": "programmable",
+        "hopCount": 3,
+        "settlementDelaySeconds": 120,
+        "trmComplianceScreening": true
+      }
+    }
+  },
+  "hmac_webhook_verification_passed": true,
+  "revenue_share_and_prize_projections": [
+    {
+      "principal_routed_usd": 100000.0,
+      "qualifying_volume_usd": 100000.0,
+      "meets_100k_minimum_threshold": true,
+      "ongoing_integrator_revenue_25bps_usd": 250.0,
+      "estimated_competition_prize_usd": 250.0,
+      "total_projected_earnings_usd": 500.0
+    },
+    {
+      "principal_routed_usd": 500000.0,
+      "qualifying_volume_usd": 500000.0,
+      "meets_100k_minimum_threshold": true,
+      "ongoing_integrator_revenue_25bps_usd": 1250.0,
+      "estimated_competition_prize_usd": 1250.0,
+      "total_projected_earnings_usd": 2500.0
+    },
+    {
+      "principal_routed_usd": 2000000.0,
+      "qualifying_volume_usd": 2000000.0,
+      "meets_100k_minimum_threshold": true,
+      "ongoing_integrator_revenue_25bps_usd": 5000.0,
+      "estimated_competition_prize_usd": 5000.0,
+      "total_projected_earnings_usd": 10000.0
+    }
+  ],
+  "generated_at": "2026-11-11T20:28:41.195705+00:00",
+  "execution_time_ms": 1527.69
+}

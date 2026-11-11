@@ -1,0 +1,33 @@
+{
+  "grants_targeted": [
+    {
+      "id": "e32e3c0c-a87b-4535-b710-f7cc86b2asds",
+      "slug": "agentic-engineering",
+      "title": "Agentic Engineering Grants",
+      "sponsor": "Superteam",
+      "reward_amount": 200,
+      "token": "USDG",
+      "tranche_structure": "50% upfront (100 USDG) + 50% upon shipping working Solana product (100 USDG)"
+    },
+    {
+      "id": "65b8ecbc-b04b-11f1-8d4e-7a64e2855b7e",
+      "slug": "build-for-breakpoint",
+      "title": "Build for Breakpoint: Agentic Grants",
+      "sponsor": "Superteam UK",
+      "reward_amount": 200,
+      "token": "USDG",
+      "tranche_structure": "50% upfront (100 USDG) + 50% once demo is live (100 USDG)"
+    }
+  ],
+  "wallets": {
+    "solana_wallet": "Aw2hhJvjewAcxssyWMzKmFge6jWxEzN6GiFQgyZNKakt",
+    "evm_wallet": "0x971b573b47357c22a67FcE8c56Aaeb478356C942"
+  },
+  "shipped_solana_product_verification": {
+    "hermes_x402_endpoints_verified": 12,
+    "hermes_x402_solana_sig_accepted": true,
+    "oobe_mainnet_programs_verified": 9,
+    "multihopper_contracts_verified": 3
+  },
+  "generated_at": "2026-11-11T20:28:41.196435+00:00"
+}

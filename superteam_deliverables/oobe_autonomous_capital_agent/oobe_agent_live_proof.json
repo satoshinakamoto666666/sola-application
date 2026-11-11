@@ -1,0 +1,232 @@
+{
+  "bounty_id": "591423c3-bb3e-4f91-8ff0-69f163038ede",
+  "bounty_slug": "build-an-autonomous-capital-agent-on-solana-and-compete-for-dollar500-in-rewards",
+  "sponsor": "OOBE Protocol",
+  "reward_usdc": 500.0,
+  "agent_identity": {
+    "agent_name": "ZeroCapitalSteveAutonomousAgent",
+    "solana_wallet": "Aw2hhJvjewAcxssyWMzKmFge6jWxEzN6GiFQgyZNKakt",
+    "solscan_url": "https://solscan.io/account/Aw2hhJvjewAcxssyWMzKmFge6jWxEzN6GiFQgyZNKakt",
+    "evm_wallet": "0x971b573b47357c22a67FcE8c56Aaeb478356C942"
+  },
+  "eligibility_answer": {
+    "question": "Share your agent wallet adress + any transaction link on Solana explorer / solscan if relevant.",
+    "answer": "Agent Wallet Address: Aw2hhJvjewAcxssyWMzKmFge6jWxEzN6GiFQgyZNKakt | Solscan Explorer: https://solscan.io/account/Aw2hhJvjewAcxssyWMzKmFge6jWxEzN6GiFQgyZNKakt"
+  },
+  "steve_capital_guardrails": {
+    "min_funding_threshold_usdc": 20.0,
+    "max_single_swap_pct_of_nav": 15.0,
+    "max_slippage_bps": 50,
+    "min_lending_health_factor": 1.25,
+    "daily_drawdown_circuit_breaker_pct": 3.5,
+    "anti_wash_trading_policy": "Strict prohibition on self-transfers, circular routes, and artificial volume",
+    "whitelisted_protocols": [
+      "multihopper_core",
+      "multihopper_orchestrator",
+      "multihopper_transfer_hook_guard",
+      "jupiter_v6_aggregator",
+      "raydium_clmm",
+      "orca_whirlpool",
+      "meteora_dlmm",
+      "kamino_lending",
+      "token_2022"
+    ]
+  },
+  "solana_mainnet_program_verification": {
+    "slot": 468257544,
+    "programs": {
+      "multihopper_core": {
+        "program_id": "3jLoS2wbNgtKzieUUxwg6Xhdv6gbZkHDtPWA9ZAgspFh",
+        "deployed_on_mainnet": true,
+        "executable": true,
+        "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "lamports": 1141440
+      },
+      "multihopper_orchestrator": {
+        "program_id": "4TPCmR2uN3hDM1FbTsf7ZtFXwXGSz4u1Kxv5YHj6eruX",
+        "deployed_on_mainnet": true,
+        "executable": true,
+        "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "lamports": 1141440
+      },
+      "multihopper_transfer_hook_guard": {
+        "program_id": "2JEv3pD6nczEvn1xDXaEzehkJofPPjoQQpnW5nGY3r52",
+        "deployed_on_mainnet": true,
+        "executable": true,
+        "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "lamports": 1141440
+      },
+      "jupiter_v6_aggregator": {
+        "program_id": "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4",
+        "deployed_on_mainnet": true,
+        "executable": true,
+        "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "lamports": 6982116527
+      },
+      "raydium_clmm": {
+        "program_id": "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK",
+        "deployed_on_mainnet": true,
+        "executable": true,
+        "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "lamports": 1857389137
+      },
+      "orca_whirlpool": {
+        "program_id": "whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc",
+        "deployed_on_mainnet": true,
+        "executable": true,
+        "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "lamports": 78851581
+      },
+      "meteora_dlmm": {
+        "program_id": "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo",
+        "deployed_on_mainnet": true,
+        "executable": true,
+        "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "lamports": 104028466
+      },
+      "kamino_lending": {
+        "program_id": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+        "deployed_on_mainnet": true,
+        "executable": true,
+        "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "lamports": 33141440
+      },
+      "token_2022": {
+        "program_id": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+        "deployed_on_mainnet": true,
+        "executable": true,
+        "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+        "lamports": 70228638
+      }
+    }
+  },
+  "sub_agent_hierarchy": [
+    {
+      "sub_agent_id": "steve-sub-b6a40cff852f745b",
+      "role": "yield_guard_kamino_orca",
+      "allocation_pct": 45.0,
+      "spending_policy": {
+        "max_single_tx_usdc": 50.0,
+        "daily_spend_limit_usdc": 200.0,
+        "require_simulation_success": true,
+        "anti_circular_routing_guard": true
+      },
+      "sap_mcp_tools": [
+        "sap.kamino.deposit",
+        "sap.orca.whirlpool_quote",
+        "sap.raydium.clmm_positions",
+        "sap.meteora.dlmm_bins"
+      ]
+    },
+    {
+      "sub_agent_id": "steve-sub-bb027d2c0a8b4300",
+      "role": "spot_and_adrena_perps_trader",
+      "allocation_pct": 30.0,
+      "spending_policy": {
+        "max_single_tx_usdc": 25.0,
+        "daily_spend_limit_usdc": 100.0,
+        "require_simulation_success": true,
+        "anti_circular_routing_guard": true
+      },
+      "sap_mcp_tools": [
+        "sap.jupiter.quote_v6",
+        "sap.jupiter.swap",
+        "sap.adrena.open_perp_xau",
+        "sap.magicblock.private_transfer"
+      ]
+    },
+    {
+      "sub_agent_id": "steve-sub-0cdad98c7bdfa689",
+      "role": "multihopper_treasury_router",
+      "allocation_pct": 15.0,
+      "spending_policy": {
+        "max_single_tx_usdc": 100.0,
+        "daily_spend_limit_usdc": 400.0,
+        "require_simulation_success": true,
+        "anti_circular_routing_guard": true
+      },
+      "sap_mcp_tools": [
+        "multihopper.estimate_fees",
+        "multihopper.create_transfer",
+        "multihopper.prepare_bundle",
+        "multihopper.confirm_broadcast"
+      ]
+    },
+    {
+      "sub_agent_id": "steve-sub-65919a53c7bc0ec6",
+      "role": "ace_data_cloud_intel_agent",
+      "allocation_pct": 10.0,
+      "spending_policy": {
+        "max_single_tx_usdc": 10.0,
+        "daily_spend_limit_usdc": 40.0,
+        "require_simulation_success": true,
+        "anti_circular_routing_guard": true
+      },
+      "sap_mcp_tools": [
+        "ace.google_search",
+        "ace.market_research_brief",
+        "ace.sentiment_score",
+        "ace.image_chart_gen",
+        "ace.voice_narration"
+      ]
+    }
+  ],
+  "multihopper_side_track": {
+    "track_name": "MultiHopper x Steve Capital: Agent Routing Challenge",
+    "track_prize_pool_usdc": 125.0,
+    "core_program_id": "3jLoS2wbNgtKzieUUxwg6Xhdv6gbZkHDtPWA9ZAgspFh",
+    "orchestrator_program_id": "4TPCmR2uN3hDM1FbTsf7ZtFXwXGSz4u1Kxv5YHj6eruX",
+    "transfer_hook_guard_program_id": "2JEv3pD6nczEvn1xDXaEzehkJofPPjoQQpnW5nGY3r52",
+    "trm_labs_screening_enabled": true,
+    "configured_routes": [
+      {
+        "route_name": "Yield-to-SubAgent-Vault-Distribution",
+        "source_wallet": "Aw2hhJvjewAcxssyWMzKmFge6jWxEzN6GiFQgyZNKakt",
+        "token_mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "token_symbol": "USDC",
+        "hops_count": 2,
+        "destinations_count": 3,
+        "purpose": "Automated non-custodial distribution of harvested Kamino/Raydium USDC yields across specialist sub-agent operational vaults"
+      }
+    ]
+  },
+  "ace_data_cloud_side_track": {
+    "track_name": "Ace Data Cloud x Steve Capital: Build with AI Tools Challenge",
+    "track_prize_pool_usd": 125.0,
+    "mcp_endpoint": "https://platform.acedata.cloud/mcp",
+    "five_service_requests_pipeline": [
+      {
+        "request_index": 1,
+        "tool": "ace.google_search",
+        "query": "Solana Kamino USDC supply APY vs Raydium SOL-USDC CLMM 24h fee APR",
+        "purpose": "Real-time yield spread discovery before capital reallocation"
+      },
+      {
+        "request_index": 2,
+        "tool": "ace.google_search",
+        "query": "FOMC interest rate expectations and XAU gold spot macro volatility",
+        "purpose": "Macro regime filter for Adrena synthetic XAU/USD perpetual hedge"
+      },
+      {
+        "request_index": 3,
+        "tool": "ace.research_agent",
+        "query": "Audit Solana SPL token liquidity depth and holder concentration for top Meteora DLMM pools",
+        "purpose": "Pre-trade rug/slippage risk scoring mandated by Steve Capital guardrails"
+      },
+      {
+        "request_index": 4,
+        "tool": "ace.image_generation",
+        "query": "Daily portfolio PnL & risk allocation infographic for Steve Capital Agent Space",
+        "purpose": "Visual reporting artifact for X (@acedatacloud @OOBEonSol @SteveCapitalOS)"
+      },
+      {
+        "request_index": 5,
+        "tool": "ace.voice_narration",
+        "query": "60-second executive audio briefing summarizing daily Arena XP, yield harvest, and MultiHopper treasury routes",
+        "purpose": "Automated voice update published to community channels"
+      }
+    ]
+  },
+  "generated_at": "2026-11-11T20:28:39.667610+00:00",
+  "execution_time_ms": 125.21
+}
